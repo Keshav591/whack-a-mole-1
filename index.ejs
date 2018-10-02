@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title><%= htmlWebpackPlugin.options.title %></title>
+</head>
+<body>
+    <div class="content">
+        <h1>Whack-a-Mole</h1>
+        <div class="container">
+            <div class="half-col">
+                <button id="startButton" type="button" name="Start">Start</button>
+                <button id="stopButton" type="button" name="Stop">Stop</button>
+                <button id="resetButton" type="button" name="Reset">Reset</button>
+            </div>
+            <div class="half-col">
+                <h3>Score: <span id="score">0</span></h3>
+                <h3>Status: <span id="status">Waiting for player...</span></h3>
+            </div>
+        </div>
+        <div class="container">
+            <div class="mole-row">
+                <div class="mole" aria-label="mole-1"></div>
+                <div class="mole" aria-label="mole-2"></div>
+                <div class="mole" aria-label="mole-3"></div>
+            </div>
+            <div class="mole-row">
+                <div class="mole" aria-label="mole-4"></div>
+                <div class="mole" aria-label="mole-5"></div>
+                <div class="mole" aria-label="mole-6"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

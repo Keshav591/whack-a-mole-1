@@ -1,0 +1,70 @@
+html {
+    box-sizing: border-box;
+    background: green;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #ffffff;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+.content {
+    padding: 20px;
+}
+
+.container {
+    margin: 0 auto;
+}
+
+h1 {
+    font-size: 5rem;
+    text-align: center;
+}
+
+h3 {
+    margin: 0;
+}
+
+.half-col {
+    width: 50%;
+    float: left;
+}
+
+.mole {
+    float: left;
+    width: 33.3%;
+    min-height: 15vw;
+    transition: background-position .2s ease;
+    background: url(../images/mole.png) center 500px no-repeat;
+    background-size: contain;
+    position: relative;
+    // create the illusion of a mole hole
+    &:after {
+        content: ' ';
+        width: 90%;
+        height: 15%;
+        position: absolute;
+        bottom: -10px;
+        left: 5%;
+        padding: 0 10px;
+        background: #000000;
+        border-radius: 50%;
+    }
+    // pop the mole up
+    &.active {
+        cursor: pointer;
+        transition: background-position .2s ease;
+        background-position: center bottom;
+        &.slow {
+            transition: background-position 1s ease;
+            pointer-events: none;
+        }
+    }
+    &.whacked {
+        pointer-events: none;
+        background: url(../images/mole-whacked.png) center bottom no-repeat;
+        background-size: contain;
+    }
+}
