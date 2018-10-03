@@ -21,6 +21,7 @@ html {
 h1 {
     font-size: 5rem;
     text-align: center;
+    margin-top: 0;
 }
 
 h3 {
@@ -36,9 +37,7 @@ h3 {
     float: left;
     width: 33.3%;
     min-height: 15vw;
-    transition: background-position .2s ease;
-    background: url(../images/mole.png) center 500px no-repeat;
-    background-size: contain;
+    overflow: hidden;
     position: relative;
     // create the illusion of a mole hole
     &:after {
@@ -46,25 +45,39 @@ h3 {
         width: 90%;
         height: 15%;
         position: absolute;
-        bottom: -10px;
+        bottom: 0;
         left: 5%;
         padding: 0 10px;
         background: #000000;
         border-radius: 50%;
     }
-    // pop the mole up
+    &:before {
+        content: ' ';
+        display: block;
+        background-image: url(../images/mole.png);
+        background-position: center bottom;
+        background-repeat: no-repeat;
+        background-size: contain;
+        transition: transform .3s ease;
+        transform: translateY(500px);
+        height: 15vw;
+    }
     &.active {
         cursor: pointer;
-        transition: background-position .2s ease;
-        background-position: center bottom;
-        &.slow {
-            transition: background-position 1s ease;
-            pointer-events: none;
+        &:before {
+            transform: translateY(5px);
         }
-    }
-    &.whacked {
-        pointer-events: none;
-        background: url(../images/mole-whacked.png) center bottom no-repeat;
-        background-size: contain;
+        &.slow {
+            pointer-events: none;
+            &:before {
+                transition: transform 1s ease;
+            }
+        }
+        &.whacked {
+            pointer-events: none;
+            &:before {
+                background-image: url(../images/mole-whacked.png);
+            }
+        }
     }
 }
