@@ -66,7 +66,7 @@ class MoleWhacker5000 {
         this.randomMole.classList.add('active');
         setTimeout(() => {
             // we don't want to hide a 'whacked' mole just yet
-            if (this.randomMole.classList.contains('whacked')) {
+            if (!this.randomMole.classList.contains('whacked')) {
                 this.randomMole.classList.remove('active');
             }
         }, Math.round(Math.random() * 1000)); // vary the amount of time a mole is visible
