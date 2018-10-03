@@ -69,7 +69,8 @@ class MoleWhacker5000 {
             if (!this.randomMole.classList.contains('whacked')) {
                 this.randomMole.classList.remove('active');
             }
-        }, Math.round(Math.random() * 1000)); // vary the amount of time a mole is visible
+        }, Math.floor(Math.random() * (2000 - 850)) + 850); // vary the amount of time a mole is visible
+
         this.previousMole = this.randomMole;
     }
     init() {
