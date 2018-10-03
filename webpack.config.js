@@ -17,7 +17,8 @@ const appHtmlTitle = 'Whack-a-Mole';
 module.exports = {
     entry: {
         vendor: [
-            'lodash'
+            '@babel/polyfill',
+            'classlist-polyfill'
         ],
         bundle: path.join(dirApp, 'index')
     },
