@@ -54,7 +54,7 @@ h3 {
     &:before {
         content: ' ';
         display: block;
-        background-image: url(../images/mole.png);
+        background-image: url(../images/pp2.png);
         background-position: center bottom;
         background-repeat: no-repeat;
         background-size: contain;
@@ -76,8 +76,16 @@ h3 {
         &.whacked {
             pointer-events: none;
             &:before {
-                background-image: url(../images/mole-whacked.png);
+                background-image: url(../images/ppwhack2.png);
             }
         }
     }
+}
+
+.toggle-content {
+    display: none;
+}
+
+.toggle-content.is-visible {
+    display: block;
 }

@@ -28,7 +28,7 @@ class MoleWhacker5000 {
             setTimeout(() => {
                 mole.classList.remove('whacked', 'active');
             }, 1000);
-            this.score ++;
+            this.score++;
             this.scoreBoard.textContent = this.score;
         }
     }
@@ -39,10 +39,13 @@ class MoleWhacker5000 {
         // Prevent users from clicking start multiple times
         if (this.gameRunning) { return; }
         this.gameRunning = true;
-
         // Taunt the player by showing all the moles before starting the game
-        this.moles.forEach(mole => mole.classList.add('active', 'slow'));
-        this.setStatusText('Ready...?');
+        this.moles.forEach(mole => {
+            mole.classList.add('active', 'slow')
+            // mole[background-image] = 'url(../images/mole.png)'
+            //background-image: url(../images/mole.png);
+        });
+        this.setStatusText('Ready to whack pp...?');
         setTimeout(() => {
             this.setStatusText('Playing...');
             this.moles.forEach(mole => mole.classList.remove('active', 'slow'));
@@ -83,6 +86,16 @@ class MoleWhacker5000 {
             this.setStatusText('Waiting for player...');
         });
         this.moles.forEach(mole => mole.addEventListener('click', this.handleWhack.bind(this, mole)));
+        // Hide an element
+        // var hide = function (content) {
+        //     content.classList.remove('is-visible');
+        // };
+
+        // $("#content").hide();
+        // if (this.score>5){
+        //     $("#content").hide();
+        //     console.log("done")
+        // }
     }
 }
 
