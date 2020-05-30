@@ -1,17 +1,21 @@
 {
-  "name": "Whack-a-Mole",
+  "name": "whack-pp",
   "version": "1.0.0",
   "description": "A Whack-a-Mole game built using vanilla JS, HTML and Sass",
   "author": "Ryan Leafey",
   "license": "MIT",
-  "homepage": "https://github.com/releaf/whack-a-mole",
+  "homepage": "https://github.com/Keshav591/whack-pp",
   "scripts": {
     "dev": "cross-env NODE_ENV=dev webpack-dev-server --progress --mode development --config webpack.config.dev.js",
     "build": "webpack -p --progress --mode production --config webpack.config.build.js"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/releaf/whack-a-mole"
+    "url": "https://github.com/Keshav591/whack-pp"
+  },
+  "engines": {
+      "node": "12.x",
+      "npm": "6.x"
   },
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
